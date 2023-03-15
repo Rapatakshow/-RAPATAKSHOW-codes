@@ -1,0 +1,63 @@
+# Define the list of teams
+teams = []
+for i in range(16):
+    team_name = input("Enter the name of team {}: ".format(i+1))
+    teams.append(team_name)
+
+# Define the list of players for each team
+team_players = {}
+for team_name in teams:
+    player_list = []
+    for i in range(5):
+        player_name = input("Enter the name of player {}: ".format(i+1))
+        player_list.append(player_name)
+    team_players[team_name] = player_list
+
+# Define the list of courts
+courts = [1, 2, 3]
+
+# Define the list of game dates and times
+import datetime
+start_date = datetime.date(2023, 4, 1)
+game_dates = [start_date + datetime.timedelta(days=i) for i in range(14)]
+game_times = ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM"]
+
+# Define the game schedule
+import random
+game_schedule = []
+for game_date in game_dates:
+    for game_time in game_times:
+        court = random.choice(courts)
+        teams_to_play = random.sample(teams, 2)
+        game = {
+            "date": game_date,
+            "time": game_time,
+            "court": court,
+            "team1": teams_to_play[0],
+            "team2": teams_to_play[1]
+        }
+        game_schedule.append(game)
+
+# Display the game schedule
+print("\nRAPATAKSHOW TOURNAMENT SCHEDULE")
+for game in game_schedule:
+    print("{} - {}: Court {} - {} vs {}".format(game["date"], game["time"], game["court"], game["team1"], game["team2"]))
+
+
+How to use it 
+
+
+This code defines a list of 16 teams for the RAPATAKSHOW tournament, and prompts the user to enter the name of each team and the name of each player on each team. The code then generates a schedule for the tournament over the course of two weeks, with games being played on three different basketball courts. The schedule includes the date, time, court, and two teams playing in each game.
+
+To use the code, you can simply run it on your computer or device and follow the prompts to enter the team and player names. The schedule will be generated automatically, and you can view it in the console output. If you want to modify the code, you can change the number of teams, the number of players on each team, the number of courts, or the length and timing of the tournament.
+
+Here's a step-by-step explanation on how to use the Python code for creating a basketball register for the RAPATAKSHOW tournament:
+
+Open a Python development environment: First, open a Python development environment on your computer or device. You can use any text editor or IDE of your choice such as Sublime Text, Atom, VS Code, PyCharm, or IDLE.
+Copy the Python code: Copy the Python code provided in the previous answer and paste it into your Python development environment.
+Modify the code if needed: The code has been designed to create a register for a 16-team basketball tournament with 3 basketball courts over 2 weeks in Senegal. However, if you want to customize the tournament details such as the number of teams, players, courts, or the duration of the tournament, you can modify the code accordingly.
+Run the Python code: To run the code, click on the "Run" button in the Python development environment. Alternatively, you can navigate to the directory where the code is saved and run the code using the command python <filename>.py in the terminal (where <filename> is the name of the file where you saved the code).
+Enter the team names: When you run the code, it will prompt you to enter the names of the 16 teams that will be participating in the tournament. Type the name of each team and press "Enter" after each one.
+Enter the player names: After you have entered the team names, the Python code will prompt you to enter the name of each player on each team. For each team, type the name of each player and press "Enter" after each one.
+View the game schedule: Once you have entered all the team and player names, the Python code will generate a game schedule for the RAPATAKSHOW tournament. The schedule will include the date, time, court, and two teams playing in each game. You can view the schedule in the console output of the Python development environment.
+That's it! You have successfully used the Python code to create a basketball register for the RAPATAKSHOW tournament.
